@@ -37,8 +37,8 @@
         </ul> --}}
 
         @include('menus.navbar')
-
-
+        @yield('content')
+       
 
     </div>
 
