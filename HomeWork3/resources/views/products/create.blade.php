@@ -8,6 +8,7 @@
             <div class="form-group col-sm-6">
               <label>Product Name</label>
               <input type="text" class="form-control" name="name">
+              {{ $errors->first('name') }}
             </div>
 
             <div class="form-group col-sm-6">
@@ -58,22 +59,26 @@
             <div class="form-group col-sm-6">
               <label>Rent Price</label>
               <input type="text" class="form-control" name="rent_price">
+              {{ $errors->first('rent_price') }}
             </div>
 
             <div class="form-group col-sm-6">
               <label>Sale Price</label>
               <input type="text" class="form-control" name="sale_price">
+              {{ $errors->first('sale_price') }}
             </div>
 
             <div class="form-group col-sm-6">
               <label>List Price</label>
               <input type="text" class="form-control" name="list_price">
+              {{ $errors->first('list_price') }}
             </div>
 
             
             <div class="form-group col-sm-6">
               <label>Sold Price</label>
               <input type="text" class="form-control" name="sold_price">
+              {{ $errors->first('sold_price') }}
             </div>
 
             <div class="form-group col-sm-6">
