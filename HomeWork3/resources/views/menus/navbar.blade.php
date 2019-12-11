@@ -32,7 +32,7 @@
           </li>
 
           <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Product Status
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Zone
             <span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li><a href="{{route('zones.create')}}">Create Zone</a></li>
@@ -41,11 +41,11 @@
           </li>
 
           <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Product Status
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Product
             <span class="caret"></span></a>
             <ul class="dropdown-menu">
-            <li><a href="{{route('products.create')}}">Create Product Status</a></li>
-            <li><a href="{{route('products.index')}}">View Product Status</a></li>
+            <li><a href="{{route('products.create')}}">Create Product</a></li>
+            <li><a href="{{route('products.index')}}">View Product</a></li>
             </ul>
           </li>
 
