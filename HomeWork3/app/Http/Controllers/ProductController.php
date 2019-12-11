@@ -8,7 +8,8 @@ use App\Models\ProductType;
 use App\Models\ProductStatus;
 use App\Models\Shape;
 use App\Models\Zone;
-use App\Model\ProductPriceHistory;
+use App\Http\Requests\ProductRequest;
+
 
 class ProductController extends Controller
 {
@@ -51,8 +52,9 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProductRequest $request)
     {
+        $validated = $request->validated();
         $create = Product::create($request->only(
             [
                 'name', 
@@ -69,9 +71,10 @@ class ProductController extends Controller
                 'updated_by'
             ]
             ));
-            if($create)
-                return redirect()->back()->with('success', 'Saved');
-                return redirect()->back()->with('failed', 'Failed in saved');
+            if($create){
+                return redirect()->route('products.index')->with('success', 'Saved');
+            }
+                // return redirect()->route('product.index')->with('failed', 'Failed in saved');
     }
 
     /**
@@ -141,7 +144,7 @@ class ProductController extends Controller
         else {
             if($new->rent_price || $new->sale_price || $new->list_price || $new->sold_price) $new->productPriceHistory()->create($data);
         }
-        return redirect()->back()->with('success', 'Data Updated successfully.');
+        return redirect()->route('product.index')->with('success', 'Data Updated successfully.');
     }
 
     /**
